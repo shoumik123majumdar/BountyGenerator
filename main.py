@@ -36,14 +36,16 @@ reddit = praw.Reddit(
     user_agent= USER_NAME
 )
 
+
+
 subreddit = reddit.subreddit('OnePiecePowerScaling')  # stores the subreddit we will be working with
 time_range = 'week'  # can also use day, month, year
 
 #Creates a list of the top posts (number of posts = limit) from our time_range (in this case a week)
-post_list = subreddit.top(time_filter = time_range,limit=25)
+post_list = subreddit.top(time_filter = time_range)
 
 
-inclusion_phrases = ['Who wins', "Tier List"]
+inclusion_phrases = ['Who wins', "Tier List", "strongest", "weaker", "stronger", "weakest"]
 character_list = []
 with open('characters.csv',newline='') as file:
     csv_reader = csv.reader(file)
@@ -51,15 +53,35 @@ with open('characters.csv',newline='') as file:
         character_list.extend([value for value in row if value])
 
 
-
-def is_valid_post(post_title):
-    for word in post_title.split():
-        if word in character_list or word in inclusion_phrases:
+def fuzzy_compare_to_list(phrase, word_list):
+    for word in word_list:
+        if fuzz.partial_ratio(word,phrase)>80:
             return True
     return False
 
-filtered_posts = []
+def is_valid_post(post_title):
+    if fuzzy_compare_to_list(post_title,character_list) or fuzzy_compare_to_list(post_title,inclusion_phrases):
+        return True
+    return False
+
+
+
+data_posts = []
 for post in post_list:
     if is_valid_post(post.title):
-        print(post.title)
+        post_data = {
+            "post_id" : post.id,
+            "title" : post.title,
+            "num_votes" : post.score,
+            "comments" : []
+        }
+        data_posts.append(post_data)
 
+df_posts = pd.DataFrame(data_posts)
+"""
+"""
+
+
+#TODO: Once, posts are filtered, now filter each comment using a similar criteria.
+
+#Changes
