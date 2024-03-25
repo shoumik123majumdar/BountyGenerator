@@ -63,8 +63,3 @@ for post in post_list:
     if is_valid_post(post.title):
         print(post.title)
 
-
-
-#TODO: Once, posts are filtered, now filter each comment using a similar criteria.
-
-#Changes
