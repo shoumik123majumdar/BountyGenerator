@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba127a4-8953-410e-a488-65d0f227ce98" name="Changes" comment="Filtered out any posts that don't include a characters name in the title, or aren't posts about things like &quot;Who wins&quot;, or &quot;Tier List&quot;">
+    <list default="true" id="3ba127a4-8953-410e-a488-65d0f227ce98" name="Changes" comment="Organized Data into a pandas dataframe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -67,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1711325296292</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Organized Data into a pandas dataframe">
+      <created>1711330910521</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711330910521</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -95,6 +102,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Filtered out any posts that don't include a characters name in the title, or aren't posts about things like &quot;Who wins&quot;, or &quot;Tier List&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filtered out any posts that don't include a characters name in the title, or aren't posts about things like &quot;Who wins&quot;, or &quot;Tier List&quot;" />
+    <MESSAGE value="Organized Data into a pandas dataframe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Organized Data into a pandas dataframe" />
   </component>
 </project>

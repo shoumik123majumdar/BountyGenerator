@@ -78,10 +78,12 @@ for post in post_list:
         data_posts.append(post_data)
 
 df_posts = pd.DataFrame(data_posts)
+print(df_posts)
+
 """
+ADD THE COMMENTS AND FILL THEM
 """
 
 
-#TODO: Once, posts are filtered, now filter each comment using a similar criteria.
 
 #Changes
