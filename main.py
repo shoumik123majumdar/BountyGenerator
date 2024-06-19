@@ -1,15 +1,14 @@
 import os
 import praw
-from fuzzywuzzy import fuzz
-import pandas as pd
 import csv
-from text_validator import Text_Validator
+from text_analyzer import Text_Analyzer
+from sentiment_calculator import Sentiment_Calculator
 
 '''
 PLAN:
 - Get all of the data/comments, from each post (only posts labeled analysis)
 - Combine the upvotes, downvotes, and Sentiment Analysis score into a single popularity score for each character.
-- 
+
 - Clean text: (WATCH VIDEO)
 - Sentiment analyzer class
     - Inputs: Cleaned_text, characters within text. 
@@ -40,35 +39,34 @@ time_range = 'week'  # can also use day, month, year
 #Creates a list of the top posts (number of posts = limit) from our time_range (in this case a week)
 post_list = subreddit.top(time_filter = time_range)
 
-
-inclusion_phrases = ['Who wins', "Tier List", "strongest", "weaker", "stronger", "weakest"]
+#Create the list of characters
 character_list = []
 with open('characters.csv',newline='') as file:
     csv_reader = csv.reader(file)
     for row in csv_reader:
         character_list.extend([value for value in row if value])
 
+text_validator = Text_Analyzer(character_list)
 
-text_validator = Text_Validator(character_list)
 
-
-data_posts = []
+data_posts = []  # A list of all the data from each reddit post
 for post in post_list:
-    if text_validator.is_valid_text(post.title):
+    if text_validator.is_valid_text(post.title):  # If the title contains characters from the character list
+        # Each individual posts data (title of the post, num_votes, list of comments)
         post_data = {
-            "title" : post.title.lower(), #small things to clean the data while processing it to make it easier in the future
+            "title" : post.title.lower(),
             "num_votes" : post.score,
             "comments" : []
         }
 
         post.comments.replace_more(limit=None)
         for comment in post.comments.list():
-            if text_validator.is_valid_text(comment.body):
+            if text_validator.is_valid_text(comment.body):  # If the comment contains characters from the character list
+                # comment_tuple :(comment body, score of the comment (upvotes-downvotes)
                 comment_tuple = tuple([comment.body.lower(),comment.score])
                 post_data["comments"].append(comment_tuple)
 
         data_posts.append(post_data)
+
 print(data_posts)
 
-
-#Structure the text_validation into a specialized class. This way it can be reused in other classes.

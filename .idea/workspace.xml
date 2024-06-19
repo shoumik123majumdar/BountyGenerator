@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba127a4-8953-410e-a488-65d0f227ce98" name="Changes" comment="Re-organized credit for the project (other team member dropped out)">
-      <change afterPath="$PROJECT_DIR$/sentiment_calculator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/text_validator.py" afterDir="false" />
+    <list default="true" id="3ba127a4-8953-410e-a488-65d0f227ce98" name="Changes" comment="Added comments to the data_posts dictionary object. Modularized the text_validator into a seperate class so it can be used in both the main.py file as well as the sentiment_calculator class.">
+      <change afterPath="$PROJECT_DIR$/text_analyzer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment_calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment_calculator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_validator.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715200217788</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added comments to the data_posts dictionary object. Modularized the text_validator into a seperate class so it can be used in both the main.py file as well as the sentiment_calculator class.">
+      <created>1715880801837</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715880801837</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +128,7 @@
     <MESSAGE value="Filtered out any posts that don't include a characters name in the title, or aren't posts about things like &quot;Who wins&quot;, or &quot;Tier List&quot;" />
     <MESSAGE value="Organized Data into a pandas dataframe" />
     <MESSAGE value="Re-organized credit for the project (other team member dropped out)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-organized credit for the project (other team member dropped out)" />
+    <MESSAGE value="Added comments to the data_posts dictionary object. Modularized the text_validator into a seperate class so it can be used in both the main.py file as well as the sentiment_calculator class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments to the data_posts dictionary object. Modularized the text_validator into a seperate class so it can be used in both the main.py file as well as the sentiment_calculator class." />
   </component>
 </project>
