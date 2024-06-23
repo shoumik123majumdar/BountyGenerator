@@ -9,7 +9,6 @@ PLAN:
 - Get all of the data/comments, from each post (only posts labeled analysis)
 - Combine the upvotes, downvotes, and Sentiment Analysis score into a single popularity score for each character.
 
-- Clean text: (WATCH VIDEO)
 - Sentiment analyzer class
     - Inputs: Cleaned_text, characters within text. 
     - Outputs: Dictionary of character --> sentiment score + num_upvotes
@@ -69,4 +68,5 @@ for post in post_list:
         data_posts.append(post_data)
 
 print(data_posts)
+print(len(data_posts))
 
